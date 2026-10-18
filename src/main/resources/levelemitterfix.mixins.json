@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.archengius.levelemitterfix.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "levelemitterfix.refmap.json",
+  "mixins": [
+    "AbstractLevelEmitterPartMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
