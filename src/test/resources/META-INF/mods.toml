@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "MIT"
+
+[[mods]]
+modId = "levelemitterfixtest"
+version = "0"
+displayName = "Level Emitter Fix Test"
+
+[[dependencies.levelemitterfixtest]]
+modId = "ae2"
+mandatory = true
+versionRange = "[15,)"
+ordering = "AFTER"
+side = "BOTH"

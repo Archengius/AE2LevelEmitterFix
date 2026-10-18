@@ -26,6 +26,28 @@ legacyForge {
         "${mod_id}" {
             sourceSet(sourceSets.main)
         }
+        "${mod_id}test" {
+            sourceSet(sourceSets.test)
+        }
+    }
+
+    addModdingDependenciesTo(sourceSets.test)
+
+    runs {
+        gameTestServer {
+            type = 'gameTestServer'
+            sourceSet = sourceSets.test
+            gameDirectory = layout.buildDirectory.dir('gameTestServer')
+            systemProperty 'forge.enabledGameTestNamespaces', 'levelemitterfixtest'
+        }
+    }
+}
+
+tasks.named('runGameTestServer').configure {
+    group = 'verification'
+    doFirst {
+        // Fresh world every run
+        delete layout.buildDirectory.dir('gameTestServer/gametestworld')
     }
 }
 
